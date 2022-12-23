@@ -6,8 +6,30 @@
   --text: #252327;
   --shadow: 0 0 8px #433D4610;
 }
+@font-face {
+  font-family: 'LINE Seed JP';
+  src: url('/assets/font/LINESeedJP_OTF_Bd.woff') format('woff');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'LINE Seed JP';
+  src: url('/assets/font/LINESeedJP_OTF_Eb.woff') format('woff');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'LINE Seed JP';
+  src: url('/assets/font/LINESeedJP_OTF_Rg.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'LINE Seed JP';
+  src: url('/assets/font/LINESeedJP_OTF_Th.woff') format('woff');
+  font-weight: 200;
+}
 body {
-  background-color: var(--bg)
+  background-color: var(--bg);
+  font-family: 'LINE Seed JP', sans-serif;
+  font-weight: normal;
 }
 .nav {
   position: fixed;
@@ -58,7 +80,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   background-color: #0000;
   pointer-events: none;
   transition: background-color ease .3s;
@@ -69,10 +91,13 @@ body {
 }
 .sidemenu__body {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 0;
-  left: max(-30rem, -65vw);
-  width: min(30rem, 65vw);
-  height: 100%;
+  left: max(-40rem, -65vw);
+  width: min(40rem, 65vw);
+  height: 100svh;
   background-color: var(--bg);
   transition: left ease .3s;
 }
@@ -80,8 +105,10 @@ body {
   left: 0;
 }
 .sidemenu__header {
+  flex-grow: 0;
   width: 100%;
-  aspect-ratio: 3;
+  height: min(8rem, 12vmin);
+  padding: min(4rem, 6vmin) 0;
 }
 .sidemenu__logo {
   display: flex;
@@ -93,19 +120,19 @@ body {
   margin: 0 auto;
 }
 .sidemenu__logo img {
-  height: 50%;
+  height: 100%;
   aspect-ratio: 1;
   flex-grow: 0;
 }
 .sidemenu__logo h1 {
   flex-grow: 1;
-  font-size: min(3.6rem, 5.4vmin);
+  font-size: min(3.2rem, 4.8vmin);
   color: var(--text);
 }
 .sidemenu__setting {
   display: block;
-  width: min(4rem, 6vmin);
-  height: min(4rem, 6vmin);
+  height: 64%;
+  aspect-ratio: 1;
   border-radius: min(.6rem, .9vmin);
   background-color: transparent;
   border: 0;
@@ -116,18 +143,20 @@ body {
   background-color: var(--accent-alpha);
 }
 .sidemenu__setting i {
-  font-size: min(3rem, 4.5vmin);
+  font-size: min(2rem, 3vmin);
   color: var(--gray);
 }
 .sidemenu__list {
+  flex-grow: 1;
   margin: 0;
-  padding: 0;
+  padding: min(2rem, 3vmin) 0;
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: min(1rem, 1.5vmin);
+  overflow-y: scroll;
 }
 .sidemenu__item {
   width: 80%;
@@ -136,8 +165,8 @@ body {
   display: flex;
   align-items: center;
   height: min(6rem, 9vmin);
-  background-color: var(--accent-alpha);
-  border-radius: min(1rem, 1.5vmin)
+  border-radius: min(1rem, 1.5vmin);
+  box-shadow: var(--shadow);
 }
 .sidemenu__friendsIcon {
   display: flex;
@@ -148,67 +177,76 @@ body {
   aspect-ratio: 1;
 }
 .sidemenu__friendsIcon > i {
-  font-size: min(2.4rem, 3.6vmin);
+  font-size: min(2rem, 3vmin);
   color: var(--gray);
 }
 .sidemenu__friends > p {
   flex-grow: 1;
   margin: 0;
-  font-size: min(2rem, 3vmin);
+  font-size: min(1.6rem, 2.4vmin);
   color: var(--text);
 }
 .sidemenu__friendsBadge {
-  width: min(2rem, 3vmin);
+  width: min(1.6rem, 2.4vmin);
   aspect-ratio: 1;
   margin-right: min(2rem, 3vmin);
-  line-height: min(2rem, 3vmin);
+  line-height: min(1.6rem, 2.4vmin);
   font-size: min(1rem, 1.5vmin);
   text-align: center;
-  font-weight: 900;
+  font-weight: bold;
   background-color: red;
   border-radius: 100%;
   color: #fff;
 }
 .group {
   background-color: #fff2;
-  border-radius: min(2rem, 3vmin);
+  border-radius: min(1.2rem, 1.8vmin);
   box-shadow: var(--shadow);
+  transition: box-shadow .4s ease;
   overflow: hidden;
+}
+.group:hover {
+  box-shadow: 0 0 8px var(--accent);
 }
 .group__banner {
   width: 100%;
-  aspect-ratio: 3;
+  height: min(10rem, 15vmin);
   overflow: hidden;
 }
 .group__banner img {
   width: 100%;
 }
 .group__detail {
-  padding: min(2rem, 3vmin);
+  margin: min(1.6rem, 2.4vmin);
   color: var(--text);
 }
 .group__title {
   margin: 0;
-  font-size: min(2.4rem, 3.6vmin);
+  font-size: min(2rem, 3vmin);
 }
 .group__description {
   margin: 0;
-  font-size: min(1.6rem, 2.4vmin)
+  font-size: min(1.6rem, 2.4vmin);
+  opacity: .8;
 }
 .group footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 min(2rem, 3vmin) min(2rem, 3vmin);
+  min-height: min(3.2rem, 4.8vmin);
+  margin: min(1.2rem, 1.8vmin);
+}
+.group__owner {
+  flex-grow: 1;
 }
 .group__owner .account {
   display: flex;
   align-items: center;
   gap: min(1rem, 1.5vmin);
-  height: min(4rem, 6vmin);
+  height: 100%;
 }
 .group__owner .account__avatar {
   flex-grow: 0;
-  height: 100%;
+  height: min(3.2rem, 4.8vmin);
   aspect-ratio: 1;
   margin: 0;
 }
@@ -224,21 +262,28 @@ body {
 }
 .group__owner .account__name {
   margin: 0;
-  font-size: min(1.8rem, 2.7vmin);
+  font-size: min(1.4rem, 2.1vmin);
+  line-height: min(1.6rem, 2.4vmin);
   font-weight: bold;
   color: var(--text);
 }
 .group__owner .account__username {
   margin: 0;
-  font-size: min(1.4rem, 2.1vmin);
+  font-size: min(1rem, 1.5vmin);
+  line-height: min(1.6rem, 2.4vmin);
   color: var(--text);
 }
 .group__owner .account__badge {
   color: var(--accent);
 }
+.group__member {
+  flex-grow: 0;
+  width: min(10rem, 15vmin);
+}
 .group__memberCount {
   margin: 0;
   font-size: min(1.2rem, 1.6vmin);
+  line-height: min(1.4rem, 2.1vmin);
   font-weight: bold;
   color: var(--text);
 }
@@ -246,13 +291,13 @@ body {
   display: flex;
   justify-content: start;
   width: 100%;
-  height: min(3rem, 4.5vmin);
+  height: min(1.8rem, 2.7vmin);
 }
 .group__memberIcon img {
   height: 100%;
   aspect-ratio: 1;
   border-radius: 100%;
-  margin-right: max(-1.6rem, -2.4vmin);
+  margin-right: max(-.6rem, -.9vmin);
 }
 .group__memberMore {
   position: relative;
@@ -263,22 +308,22 @@ body {
   aspect-ratio: 1;
   border-radius: 100%;
   background-color: var(--accent);
-  font-size: min(1rem, 1.5vmin);
+  font-size: min(.4rem, .6vmin);
   color: #fff;
   font-weight: bold;
 }
 .sidemenu__account {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
   width: 100%;
-  height: min(12rem, 18vmin);
+  height: min(10rem, 15vmin);
+  background-color: ;
 }
 .sidemenu__account .account {
   display: flex;
   align-items: center;
   gap: min(1rem, 1.5vmin);
-  width: 84%;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
 }
@@ -297,18 +342,19 @@ body {
 }
 .sidemenu__account .account__detail {
   flex-grow: 1;
+  flex-shrink: 1;
   height: 60%;
 }
 .sidemenu__account .account__detail > p {
   margin: 0;
 }
 .sidemenu__account .account__name {
-  font-size: min(2rem, 3vmin);
+  font-size: min(1.6rem, 2.4vmin);
   font-weight: bold;
   color: var(--text);
 }
 .sidemenu__account .account__username {
-  font-size: min(1.6rem, 2.4vmin);
+  font-size: min(1.2rem, 1.8vmin);
   color: var(--text);
   opacity: .8;
 }
@@ -323,39 +369,29 @@ body {
   width: 20%;
   border-radius: 100%;
   background-color: gold;
-  border: solid min(.4rem, .6vmin) var(--bg);
+  border: solid min(.2rem, .3vmin) var(--bg);
 }
 .sidemenu__account .account__control {
   flex-grow: 0;
-  height: 60%;
+  flex-shrink: 0;
 }
 .account__control .control {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: min(1rem, 1.5vmin);
-  height: 100%;
+  display: flex;
+  height: min(5rem, 7.5vmin);
+  width: min(10rem, 15vmin);
 }
 .account__control .control__button {
   position: relative;
-  width: min(2.6rem, 3.9vmin);
+  width: 50%;
   aspect-ratio: 1;
   background-color: transparent;
+  border-radius: min(.6rem, .9vmin);
   border: 0;
   padding: 0;
   color: var(--gray);
   font-size: min(2.4rem, 3.6vmin);
   text-align: center;
 }
-.account__control .control__button--mute::before {
-  position: absolute;
-  left: 0;
-  top: -7.5%;
-  content: '';
-  height: 15%;
-  width: 141%;
-  transform-origin: 0 50%;
-  transform: rotate(45deg);
-  border-radius: min(.4rem, .6vmin);
-  background-color: red;
+.account__control .control__button:active {
+  background-color: var(--accent-alpha);
 }
