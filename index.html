@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iris moc1</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stesan.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a class="nav__button" onclick="toggleSidemenu()">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link">
+          <i class="fa-solid fa-comment"></i>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link">
+          <i class="fa-solid fa-bell"></i>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="sidemenu">
+    <div class="sidemenu__bg" ontouchstart="toggleSidemenu()"></div>
+    <div class="sidemenu__body">
+      <header class="sidemenu__header">
+        <div class="sidemenu__logo">
+          <img src="assets/iris-icon.svg" alt="iris_logo">
+          <h1>Iris</h1>
+          <button class="sidemenu__setting">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+        </div>
+      </header>
+      <ul class="sidemenu__list">
+        <li class="sidemenu__item">
+          <div class="sidemenu__friends">
+            <div class="sidemenu__friendsIcon">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <p>フレンド</p>
+            <div class="sidemenu__friendsBadge">2</div>
+          </div>
+        </li>
+        <li class="sidemenu__item">
+          <div class="group">
+            <header class="group__banner">
+              <img src="https://media.fle.studio/media/9e007595-ef5c-48f5-821b-22a84a5f7741.png">
+            </header>
+            <div class="group__detail">
+              <h2 class="group__title">るなちをしばく会</h2>
+              <p class="group__description">もちろんあずきゃもしばきます。</p>
+            </div>
+            <footer>
+              <div class="group__owner">
+                <div class="account">
+                  <figure class="account__avatar">
+                    <img src="https://fle.st/avatar/avatar1.png">
+                  </figure>
+                  <div class="account__detail">
+                    <p class="account__name">
+                      ふれすと🐣
+                      <i class="account__badge fa-solid fa-certificate"></i>
+                    </p>
+                    <p class="account__username">@xFlest</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group__member">
+                <p class="group__memberCount">10人が参加中</p>
+                <div class="group__memberIcon">
+                  <img src="https://lutica.net/assets/lutica.png">
+                  <img src="https://stesan.dev/image/icon.jpg">
+                  <img src="https://hisubway.online/blog/img/avatar_huff74bb0afdb8a49a29a2aa9aa0dd0fe1_565436_300x0_resize_box_3.png">
+                  <div class="group__memberMore">+6</div>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </li>
+        <li class="sidemenu__item">
+          <div class="group">
+            <header class="group__banner">
+              <img src="https://pbs.twimg.com/profile_banners/1177871658771632128/1658666678/1080x360">
+            </header>
+            <div class="group__detail">
+              <h2 class="group__title">ポケットモンスター</h2>
+              <p class="group__description">🦐  /  🦀</p>
+            </div>
+            <footer>
+              <div class="group__owner">
+                <div class="account">
+                  <figure class="account__avatar">
+                    <img src="https://s3.arkjp.net/misskey/12d58979-bdb0-42b4-bcd9-64b29018953a.png">
+                  </figure>
+                  <div class="account__detail">
+                    <p class="account__name">
+                      みどら
+                    </p>
+                    <p class="account__username">@mdr_anime</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group__member">
+                <p class="group__memberCount">2人が参加中</p>
+                <div class="group__memberIcon">
+                  <img src="https://submarin.online/files/bd16d319-c69d-4fb2-bf12-7aeefb2935f0">
+                  <img src="https://hisubway.online/articles/mddeveloper/mdr_anm.jpg">
+                </div>
+              </div>
+            </footer>
+          </div>
+        </li>
+        <li class="sidemenu__item">
+          <div class="group">
+            <header class="group__banner">
+              <img src="https://mk.yopo.work/files/d86dd690-d033-478c-835c-baf93bc2245d">
+            </header>
+            <div class="group__detail">
+              <h2 class="group__title">アリスファミリー</h2>
+            </div>
+            <footer>
+              <div class="group__owner">
+                <div class="account">
+                  <figure class="account__avatar">
+                    <img src="https://mk.yopo.work/files/e0c5b478-4d89-4d7c-af52-658ca7870650">
+                  </figure>
+                  <div class="account__detail">
+                    <p class="account__name">
+                      絶対美少女☆アリスちゃん
+                    </p>
+                    <p class="account__username">@ame</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group__member">
+                <p class="group__memberCount">0人が参加中</p>
+                <div class="group__memberIcon"></div>
+              </div>
+            </footer>
+          </div>
+        </li>
+      </ul>
+      <div class="sidemenu__account">
+        <div class="account">
+          <figure class="account__avatar">
+            <div class="stesan">
+              <div class="stesan__1"></div>
+              <div class="stesan__2"></div>
+              <div class="stesan__3"></div>
+              <div class="stesan__4"></div>
+              <div class="stesan__5"></div>
+              <div class="stesan__6"></div>
+              <div class="stesan__7"></div>
+              <div class="stesan__8"></div>
+              <div class="stesan__9"></div>
+              <div class="stesan__10"></div>
+              <div class="stesan__11"></div>
+              <div class="stesan__12"></div>
+              <div class="stesan__13"></div>
+              <div class="stesan__14"></div>
+              <div class="stesan__15"></div>
+              <div class="stesan__16"></div>
+              <div class="stesan__17"></div>
+              <div class="stesan__18"></div>
+              <div class="stesan__19"></div>
+              <div class="stesan__20"></div>
+              <div class="stesan__21"></div>
+              <div class="stesan__22"></div>
+              <div class="stesan__23"></div>
+              <div class="stesan__24"></div>
+              <div class="stesan__25"></div>
+              <div class="stesan__26"></div>
+              <div class="stesan__27"></div>
+              <div class="stesan__28"></div>
+              <div class="stesan__29"></div>
+              <div class="stesan__30"></div>
+              <div class="stesan__31"></div>
+              <div class="stesan__32"></div>
+              <div class="stesan__33"></div>
+              <div class="stesan__34"></div>
+              <div class="stesan__35"></div>
+              <div class="stesan__36"></div>
+              <div class="stesan__37"></div>
+              <div class="stesan__38"></div>
+              <div class="stesan__39"></div>
+              <div class="stesan__40"></div>
+              <div class="stesan__41"></div>
+              <div class="stesan__42"></div>
+              <div class="stesan__43"></div>
+              <div class="stesan__44"></div>
+              <div class="stesan__45"></div>
+              <div class="stesan__46"></div>
+              <div class="stesan__47"></div>
+              <div class="stesan__48"></div>
+              <div class="stesan__49"></div>
+              <div class="stesan__50"></div>
+              <div class="stesan__51"></div>
+              <div class="stesan__52"></div>
+              <div class="stesan__53"></div>
+              <div class="stesan__54"></div>
+              <div class="stesan__55"></div>
+              <div class="stesan__56"></div>
+              <div class="stesan__57"></div>
+              <div class="stesan__58"></div>
+              <div class="stesan__59"></div>
+              <div class="stesan__60"></div>
+              <div class="stesan__61"></div>
+              <div class="stesan__62"></div>
+              <div class="stesan__63"></div>
+              <div class="stesan__64"></div>
+            </div>
+            <div class="account__status"></div>
+          </figure>
+          <div class="account__detail">
+            <p class="account__name">
+              すてさん
+              <i class="account__badge fa-solid fa-code"></i>
+            </p>
+            <p class="account__username">@terminaling</p>
+          </div>
+          <div class="account__control">
+            <div class="control">
+              <button class="control__button control__button--mute">
+                <i class="fa-solid fa-microphone"></i>
+              </button>
+              <button class="control__button">
+                <i class="fa-solid fa-headphones"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

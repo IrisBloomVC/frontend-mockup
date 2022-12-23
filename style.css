@@ -1,0 +1,361 @@
+:root {
+  --bg: #fbf6ff;
+  --accent: #884898;
+  --accent-alpha: #de99ff30;
+  --gray: #7e7582;
+  --text: #252327;
+  --shadow: 0 0 8px #433D4610;
+}
+body {
+  background-color: var(--bg)
+}
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bg);
+  height: min(10rem, 15vmin);
+  width: 100%;
+  border-radius: min(3rem, 4.5vmin);
+  box-shadow: var(--shadow);
+}
+.nav__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: min(2rem, 3vmin);
+  height: 100%;
+  margin: 0;
+  padding: min(2rem, 3vmin);
+  box-sizing: border-box;
+  list-style: none;
+}
+.nav__item {
+  height: 100%;
+  width: 100%;
+  border-radius: min(1rem, 1.5vmin);
+  transition: background-color ease .2s
+}
+.nav__item:active {
+  background-color: var(--accent-alpha);
+}
+.nav__link,
+.nav__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+}
+.nav__link > i,
+.nav__button > i {
+  font-size: min(2.4rem, 3.6vmin);
+  color: var(--gray);
+}
+.sidemenu__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000;
+  pointer-events: none;
+  transition: background-color ease .3s;
+}
+.sidemenu--open .sidemenu__bg {
+  background-color: #0005;
+  pointer-events: auto;
+}
+.sidemenu__body {
+  position: fixed;
+  top: 0;
+  left: max(-30rem, -65vw);
+  width: min(30rem, 65vw);
+  height: 100%;
+  background-color: var(--bg);
+  transition: left ease .3s;
+}
+.sidemenu--open .sidemenu__body {
+  left: 0;
+}
+.sidemenu__header {
+  width: 100%;
+  aspect-ratio: 3;
+}
+.sidemenu__logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: min(2rem, 3vmin);
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+.sidemenu__logo img {
+  height: 50%;
+  aspect-ratio: 1;
+  flex-grow: 0;
+}
+.sidemenu__logo h1 {
+  flex-grow: 1;
+  font-size: min(3.6rem, 5.4vmin);
+  color: var(--text);
+}
+.sidemenu__setting {
+  display: block;
+  width: min(4rem, 6vmin);
+  height: min(4rem, 6vmin);
+  border-radius: min(.6rem, .9vmin);
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  transition: background-color ease .2s;
+}
+.sidemenu__setting:active {
+  background-color: var(--accent-alpha);
+}
+.sidemenu__setting i {
+  font-size: min(3rem, 4.5vmin);
+  color: var(--gray);
+}
+.sidemenu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: min(1rem, 1.5vmin);
+}
+.sidemenu__item {
+  width: 80%;
+}
+.sidemenu__friends {
+  display: flex;
+  align-items: center;
+  height: min(6rem, 9vmin);
+  background-color: var(--accent-alpha);
+  border-radius: min(1rem, 1.5vmin)
+}
+.sidemenu__friendsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  height: 100%;
+  aspect-ratio: 1;
+}
+.sidemenu__friendsIcon > i {
+  font-size: min(2.4rem, 3.6vmin);
+  color: var(--gray);
+}
+.sidemenu__friends > p {
+  flex-grow: 1;
+  margin: 0;
+  font-size: min(2rem, 3vmin);
+  color: var(--text);
+}
+.sidemenu__friendsBadge {
+  width: min(2rem, 3vmin);
+  aspect-ratio: 1;
+  margin-right: min(2rem, 3vmin);
+  line-height: min(2rem, 3vmin);
+  font-size: min(1rem, 1.5vmin);
+  text-align: center;
+  font-weight: 900;
+  background-color: red;
+  border-radius: 100%;
+  color: #fff;
+}
+.group {
+  background-color: #fff2;
+  border-radius: min(2rem, 3vmin);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.group__banner {
+  width: 100%;
+  aspect-ratio: 3;
+  overflow: hidden;
+}
+.group__banner img {
+  width: 100%;
+}
+.group__detail {
+  padding: min(2rem, 3vmin);
+  color: var(--text);
+}
+.group__title {
+  margin: 0;
+  font-size: min(2.4rem, 3.6vmin);
+}
+.group__description {
+  margin: 0;
+  font-size: min(1.6rem, 2.4vmin)
+}
+.group footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 min(2rem, 3vmin) min(2rem, 3vmin);
+}
+.group__owner .account {
+  display: flex;
+  align-items: center;
+  gap: min(1rem, 1.5vmin);
+  height: min(4rem, 6vmin);
+}
+.group__owner .account__avatar {
+  flex-grow: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+}
+.group__owner .account__avatar > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.group__owner .account__detail {
+  flex-grow: 1;
+  height: 100%;
+}
+.group__owner .account__name {
+  margin: 0;
+  font-size: min(1.8rem, 2.7vmin);
+  font-weight: bold;
+  color: var(--text);
+}
+.group__owner .account__username {
+  margin: 0;
+  font-size: min(1.4rem, 2.1vmin);
+  color: var(--text);
+}
+.group__owner .account__badge {
+  color: var(--accent);
+}
+.group__memberCount {
+  margin: 0;
+  font-size: min(1.2rem, 1.6vmin);
+  font-weight: bold;
+  color: var(--text);
+}
+.group__memberIcon {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  height: min(3rem, 4.5vmin);
+}
+.group__memberIcon img {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  margin-right: max(-1.6rem, -2.4vmin);
+}
+.group__memberMore {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: var(--accent);
+  font-size: min(1rem, 1.5vmin);
+  color: #fff;
+  font-weight: bold;
+}
+.sidemenu__account {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: min(12rem, 18vmin);
+}
+.sidemenu__account .account {
+  display: flex;
+  align-items: center;
+  gap: min(1rem, 1.5vmin);
+  width: 84%;
+  height: 100%;
+  margin: 0 auto;
+}
+.sidemenu__account .account__avatar {
+  position: relative;
+  flex-grow: 0;
+  height: 60%;
+  aspect-ratio: 1;
+  margin: 0;
+}
+.sidemenu__account .account__avatar > :is(.stesan, img) {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 100%
+}
+.sidemenu__account .account__detail {
+  flex-grow: 1;
+  height: 60%;
+}
+.sidemenu__account .account__detail > p {
+  margin: 0;
+}
+.sidemenu__account .account__name {
+  font-size: min(2rem, 3vmin);
+  font-weight: bold;
+  color: var(--text);
+}
+.sidemenu__account .account__username {
+  font-size: min(1.6rem, 2.4vmin);
+  color: var(--text);
+  opacity: .8;
+}
+.sidemenu__account .account__badge {
+  color: var(--accent);
+}
+.sidemenu__account .account__status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 20%;
+  width: 20%;
+  border-radius: 100%;
+  background-color: gold;
+  border: solid min(.4rem, .6vmin) var(--bg);
+}
+.sidemenu__account .account__control {
+  flex-grow: 0;
+  height: 60%;
+}
+.account__control .control {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: min(1rem, 1.5vmin);
+  height: 100%;
+}
+.account__control .control__button {
+  position: relative;
+  width: min(2.6rem, 3.9vmin);
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--gray);
+  font-size: min(2.4rem, 3.6vmin);
+  text-align: center;
+}
+.account__control .control__button--mute::before {
+  position: absolute;
+  left: 0;
+  top: -7.5%;
+  content: '';
+  height: 15%;
+  width: 141%;
+  transform-origin: 0 50%;
+  transform: rotate(45deg);
+  border-radius: min(.4rem, .6vmin);
+  background-color: red;
+}
