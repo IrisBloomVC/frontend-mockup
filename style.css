@@ -489,15 +489,3 @@ body {
   outline: none;
   resize: vertical;
 }
-
-body {
-  animation: rainbow 2s linear infinite;
-}
-
-@keyframes rainbow {
-  from {
-    filter: hue-rotate(0deg);
-  } to {
-    filter: hue-rotate(360deg);
-  }
-}
