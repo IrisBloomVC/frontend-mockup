@@ -12,32 +12,8 @@
 </head>
 
 <body>
-  <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <button class="nav__button" onclick="toggleSidemenu()">
-          <i class="ti ti-menu-2"></i>
-        </button>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link">
-          <i class="ti ti-messages"></i>
-        </a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link">
-          <i class="ti ti-bell"></i>
-        </a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link">
-          <i class="ti ti-mail"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
   <div class="sidemenu">
-    <div class="sidemenu__bg" ontouchstart="toggleSidemenu()"></div>
+    <div class="sidemenu__bg" ontouchstart="toggleSidemenu()" onclick="toggleSidemenu()"></div>
     <div class="sidemenu__body">
       <header class="sidemenu__header">
         <div class="sidemenu__logo">
@@ -249,6 +225,38 @@
       </div>
     </div>
   </div>
+  <main class="content">
+    <header class="content__header">
+      <button class="content__menuButton" onclick="toggleSidemenu()">
+        <i class="ti ti-menu-2"></i>
+      </button>
+      <p class="content__title">
+        <span class="content__titleText">るなちをしばく会</span>
+        <button class="content__moreButton">
+          <i class="ti ti-chevron-down"></i>
+        </button>
+      </p>
+      <button class="content__memberButton">
+        <i class="ti ti-users"></i>
+      </button>
+    </header>
+    <div class="content__body">
+    </div>
+    <footer class="content__footer">
+      <form class="form">
+        <button class="form__addFile">
+          <i class="ti ti-file"></i>
+        </button>
+        <button class="form__addImage">
+          <i class="ti ti-photo"></i>
+        </button>
+        <textarea class="form__input" type="text" placeholder="カニ"></textarea>
+        <button class="form__sendMessage">
+          <i class="ti ti-send"></i>
+        </button>
+      </form>
+    </footer>
+  </main>
   <script src="main.js"></script>
 </body>
 </html>

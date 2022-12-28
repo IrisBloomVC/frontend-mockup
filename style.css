@@ -29,7 +29,7 @@ body {
 /* 暫定navbar */
 .nav {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 80px;
@@ -75,6 +75,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 20041203;
 }
 .sidemenu__bg {
   position: fixed;
@@ -91,12 +92,13 @@ body {
 }
 .sidemenu__body {
   position: fixed;
-  left: -100vw;
+  left: max(-72vw, -480px);
   top: 0;
   width: min(72vw, 480px);
   height: 100svh;
   background-color: var(--color-bg-primary);
   overflow: hidden;
+  transition: left ease .3s;
 }
 .sidemenu--open .sidemenu__body {
   left: 0;
@@ -343,6 +345,7 @@ body {
   width: 100%;
   margin: 0;
   font-size: 16px;
+  font-weight: bold;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -376,4 +379,113 @@ body {
 }
 .sidemenu__account .account__controlButton:active {
   background-color: var(--color-main-primary-alpha30);
+}
+
+/* main content */
+.content {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+}
+.content__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 4%;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--color-bg-primary);
+  box-shadow: 0 0 8px #0004;
+  box-sizing: border-box;
+}
+.content__menuButton {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 80%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 16px;
+  transition: background-color ease .3s;
+}
+.content__menuButton:hover {
+  background-color: var(--color-main-primary-alpha30);
+}
+.content__title {
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 50%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.content__moreButton {
+  height: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 16px;
+  transition: background-color ease .3s;
+}
+.content__moreButton:hover {
+  background-color: var(--color-main-primary-alpha30);
+}
+.content__memberButton {
+  flex-grow: 0;
+  flex-shrink: 2;
+  height: 80%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 16px;
+  transition: background-color ease .3s;
+}
+.content__memberButton:hover {
+  background-color: var(--color-main-primary-alpha30);
+}
+.content__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0 2%;
+  border-radius: 20px 20px 0 0;
+  background-color: var(--color-bg-primary);
+  box-sizing: border-box;
+  box-shadow: 0 0 8px #0004;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.form__addFile,
+.form__addImage,
+.form__sendMessage {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.form__input {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  resize: vertical;
 }
