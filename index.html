@@ -226,21 +226,65 @@
     </div>
   </div>
   <main class="content">
-    <header class="content__header">
-      <button class="content__menuButton" onclick="toggleSidemenu()">
+    <header class="header content__header">
+      <button class="header__menuButton" onclick="toggleSidemenu()">
         <i class="ti ti-menu-2"></i>
       </button>
-      <p class="content__title">
-        <span class="content__titleText">るなちをしばく会</span>
-        <button class="content__moreButton">
+      <p class="header__title">
+        <span class="header__titleText">るなちをしばく会</span>
+        <button class="header__moreButton">
           <i class="ti ti-chevron-down"></i>
         </button>
       </p>
-      <button class="content__memberButton">
+      <button class="header__memberButton">
         <i class="ti ti-users"></i>
       </button>
     </header>
     <div class="content__body">
+      <ul class="content__messages">
+        <li class="message message--others">
+          <div class="message__avatar">
+            <img src="https://media.fle.studio/media/thumbnail-b1764ae2-b019-4f70-b201-fb99f0c66bf4.webp" alt="ぁほ">
+          </div>
+          <div class="message__body">
+            <p class="message__text">飲みたいんだよなぁ…<br>でも、飲むと頭痛悪化しそう</p>
+            <p class="message__text">レモンサワー飲むか飲まないかでめっちゃ悩んでる</p>
+            <p class="message__text">レモンサワーは血液レモンサワーは血液レモンサワーは血液レモンサワーは血液レモンサワーは血液レモンサワーは血液レモンサワーは血液レモンサワーは血液レモンサワーは血液レモンサワーは血液</p>
+            <p class="message__text"><i>レモンサワーは血液</i></p>
+          </div>
+        </li>
+        <li class="message message--own">
+          <div class="message__body">
+            <p class="message__text">そんなことよりるなち<b>さん</b>しばこうぜ</p>
+          </div>
+        </li>
+        <li class="message message--others">
+          <div class="message__avatar">
+            <img src="https://submarin.online/files/8699479c-a034-42a3-ac1f-8a221b3f7347" alt="1yen">
+          </div>
+          <div class="message__body">
+            <p class="message__text">あほばかまぬけ陰キャメガネ</p>
+          </div>
+        </li>
+        <li class="message message--others">
+          <div class="message__avatar">
+            <img src="https://media.fle.studio/media/thumbnail-391c8cfc-8538-4082-b76b-62c40623e0ec.webp" alt="1yen">
+          </div>
+          <div class="message__body">
+            <p class="message__text">あずきゃもしばかれたいよう......</p>
+          </div>
+        </li>
+        <template id="message__template">
+          <li class="message message--own">
+            <div class="message__body">
+              <p class="message__text"></p>
+            </div>
+          </li>
+        </template>
+        <template id="messageText__template">
+          <p class="message__text"></p>
+        </template>
+      </ul>
     </div>
     <footer class="content__footer">
       <form class="form">
@@ -250,8 +294,8 @@
         <button class="form__addImage">
           <i class="ti ti-photo"></i>
         </button>
-        <textarea class="form__input" type="text" placeholder="エビ"></textarea>
-        <button class="form__sendMessage">
+        <textarea class="form__input" type="text" rows="1" placeholder="メッセージを送信" oninput="resizeTextarea(this)"></textarea>
+        <button class="form__sendMessage" type="button" onclick="sendMessage()">
           <i class="ti ti-send"></i>
         </button>
       </form>
