@@ -2,28 +2,33 @@
   display: none;
 }
 @font-face {
-  font-family: 'LINE Seed JP';
-  src: url('/assets/font/LINESeedJP_OTF_Bd.woff') format('woff');
+  font-family: 'Koruri';
+  src: url('/assets/font/Koruri-Bold.ttf') format('truetype');
   font-weight: 700;
 }
 @font-face {
-  font-family: 'LINE Seed JP';
-  src: url('/assets/font/LINESeedJP_OTF_Eb.woff') format('woff');
+  font-family: 'Koruri';
+  src: url('/assets/font/Koruri-Extrabold.ttf') format('truetype');
   font-weight: 800;
 }
 @font-face {
-  font-family: 'LINE Seed JP';
-  src: url('/assets/font/LINESeedJP_OTF_Rg.woff') format('woff');
+  font-family: 'Koruri';
+  src: url('/assets/font/Koruri-Semibold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Koruri';
+  src: url('/assets/font/Koruri-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 @font-face {
-  font-family: 'LINE Seed JP';
-  src: url('/assets/font/LINESeedJP_OTF_Th.woff') format('woff');
+  font-family: 'Koruri';
+  src: url('/assets/font/Koruri-Light.ttf') format('truetype');
   font-weight: 200;
 }
 body {
   background-color: var(--color-bg-primary);
-  font-family: 'LINE Seed JP', sans-serif;
+  font-family: 'Koruri', sans-serif;
 }
 
 /* sidemenu */
