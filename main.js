@@ -8,17 +8,22 @@ const resizeTextarea = (textarea) => {
 }
 const sendMessage = () => {
   const textarea = document.getElementsByClassName('form__input')[0]
-  const messages = document.getElementsByClassName('content__messages')[0]
-  const lastMessage = messages.lastElementChild
-  const template = lastMessage.classList.contains('message--own')
-      ? document.getElementById('messageText__template').content.cloneNode(true)
-      : document.getElementById('message__template').content.cloneNode(true)
-  template.querySelector('.message__text').textContent = textarea.value
-  if (lastMessage.classList.contains('message--own')) {
-    lastMessage.appendChild(template)
-  } else {
-    messages.appendChild(template)
+  if (textarea.value) {
+    const messages = document.getElementsByClassName('content__messages')[0]
+    const lastMessage = messages.lastElementChild
+    const template = lastMessage.classList.contains('message--own')
+        ? document.getElementById('messageText__template').content.cloneNode(true)
+        : document.getElementById('message__template').content.cloneNode(true)
+    template.querySelector('.message__text').textContent = textarea.value
+    if (lastMessage.classList.contains('message--own')) {
+      lastMessage.appendChild(template)
+    } else {
+      messages.appendChild(template)
+    }
+    textarea.value = null
+    resizeTextarea(textarea)
   }
-  textarea.value = null
-  resizeTextarea(textarea)
+}
+const openGroupDescription = () => {
+  
 }
